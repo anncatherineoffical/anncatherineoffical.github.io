@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ann Catherine M.B | Portfolio</title>
+<style>
+  :root{
+    --bg: #0f1216;
+    --panel: #171b21;
+    --accent: #7dd3c0;
+    --accent-2: #e8b4a3;
+    --text: #eef1f3;
+    --muted: #9aa4ad;
+    --border: #262c34;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header{
+    padding: 80px 24px 60px;
+    text-align: center;
+    background: linear-gradient(160deg, #141821, #0f1216 70%);
+    border-bottom: 1px solid var(--border);
+  }
+  header .tag{
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  header h1{
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  header p.role{
+    color: var(--muted);
+    font-size: 18px;
+  }
+  nav{
+    display:flex;
+    justify-content:center;
+    gap: 28px;
+    padding: 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top:0;
+    z-index: 10;
+    flex-wrap: wrap;
+  }
+  nav a{
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  nav a:hover{ color: var(--accent); }
+
+  main{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  section{
+    margin-bottom: 70px;
+  }
+  section h2{
+    font-size: 24px;
+    margin-bottom: 24px;
+    display:flex;
+    align-items:center;
+    gap: 12px;
+  }
+  section h2::before{
+    content:"";
+    width: 28px;
+    height: 3px;
+    background: var(--accent);
+    display:inline-block;
+  }
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  #about p{ color: var(--muted); max-width: 700px; }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+  .skill{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .skill h3{ font-size: 16px; margin-bottom: 8px; color: var(--accent-2); }
+  .bar{
+    height: 6px;
+    background: #262c34;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .bar span{
+    display:block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  }
+
+  .edu-item{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .edu-item:last-child{ border-bottom:none; }
+  .edu-item h3{ font-size: 17px; }
+  .edu-item p{ color: var(--muted); font-size: 14px; }
+  .edu-item .year{ color: var(--accent); font-size: 14px; white-space: nowrap; }
+
+  .proj-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .proj{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+  }
+  .proj h3{ margin-bottom: 8px; color: var(--accent); font-size: 17px; }
+  .proj p{ color: var(--muted); font-size: 14px; }
+  .proj .status{
+    display:inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(125,211,192,0.12);
+    color: var(--accent);
+  }
+
+  .contact-grid{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .contact-item{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    flex: 1 1 200px;
+  }
+  .contact-item span{
+    display:block;
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  footer{
+    text-align:center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px){
+    header{ padding: 60px 16px 40px; }
+    nav{ gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">Portfolio</div>
+  <h1>Ann Catherine M.B</h1>
+  <p class="role">First Year BCA Student</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am a first-year Bachelor of Computer Applications (BCA) student with a strong interest in
+        programming, problem-solving, and technology. I am currently building my foundation in
+        computer science concepts and looking forward to growing my skills through coursework and
+        hands-on projects.
+      </p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <div class="edu-item">
+        <div>
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <p>First Year</p>
+        </div>
+        <div class="year">2026 &ndash; Present</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <h3>Higher Secondary Education</h3>
+          <p>Completed prior to joining BCA</p>
+        </div>
+        <div class="year">Completed</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="skill">
+        <h3>Programming Fundamentals</h3>
+        <div class="bar"><span style="width:60%"></span></div>
+      </div>
+      <div class="skill">
+        <h3>Problem Solving</h3>
+        <div class="bar"><span style="width:70%"></span></div>
+      </div>
+      <div class="skill">
+        <h3>MS Office</h3>
+        <div class="bar"><span style="width:75%"></span></div>
+      </div>
+      <div class="skill">
+        <h3>Communication</h3>
+        <div class="bar"><span style="width:80%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="proj-grid">
+      <div class="proj">
+        <h3>Academic Mini Project</h3>
+        <p>A first-year coursework project exploring core programming concepts.</p>
+        <span class="status">In Progress</span>
+      </div>
+      <div class="proj">
+        <h3>Personal Learning Project</h3>
+        <p>Self-driven exploration of web development basics, including HTML and CSS.</p>
+        <span class="status">Learning</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span>Name</span>
+        Ann Catherine M.B
+      </div>
+      <div class="contact-item">
+        <span>Course</span>
+        BCA &ndash; First Year
+      </div>
+      <div class="contact-item">
+        <span>Email</span>
+        anncatherine.offical@gmail.com
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Ann Catherine M.B &mdash; Portfolio
+</footer>
+
+</body>
+</html>
